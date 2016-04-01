@@ -10,13 +10,24 @@ import UIKit
 
 class PlaylistDetailViewController: UIViewController {
 
-    @IBOutlet weak var buttonPressLabel: UILabel!
-    var segueLabelText: String = ""
+    var playlist: Playlist?
+    
+    @IBOutlet weak var playlistCoverImage: UIImageView!
+    @IBOutlet weak var playlistTitle: UILabel!
+    @IBOutlet weak var playlistDescription: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buttonPressLabel.text = segueLabelText
+        if playlist != nil {
+
+//            playlistCoverImage.Image = playlist!.icon
+            playlistCoverImage.backgroundColor = playlist!.backgroundColor
+            playlistTitle.text = playlist!.title
+            playlistDescription.text = playlist!.description
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
